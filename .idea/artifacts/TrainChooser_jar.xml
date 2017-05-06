@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TrainChooser:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TrainChooser_jar</output-path>
+    <root id="archive" name="TrainChooser.jar">
+      <element id="module-output" name="TrainChooser" />
+    </root>
+  </artifact>
+</component>

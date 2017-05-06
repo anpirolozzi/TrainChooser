@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="972.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trainchooser.gui.controller.ApplicationController">
+   <top>
+      <VBox prefHeight="40.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+              <items>
+                  <MenuButton mnemonicParsing="false" text="TrainChooser">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#showNewTicketDialog" text="Aggiungi Biglietto" />
+                      <MenuItem mnemonicParsing="false" onAction="#showCompareTicketDialog" text="Compara Biglietti" />
+                        <MenuItem mnemonicParsing="false" onAction="#showPreferenceDialog" text="Preferenze" />
+                    </items>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@/icon.png" />
+                           </image></ImageView>
+                     </graphic>
+                  </MenuButton>
+                  <Button fx:id="newTicketButton" mnemonicParsing="false" onAction="#showNewTicketDialog" text="Aggiungi Biglietto" />
+              </items>
+            </ToolBar>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <TableView fx:id="ticketTableView" prefHeight="330.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="64.0" text="ID" />
+          <TableColumn fx:id="classColumn" prefWidth="150.0" text="Classe" />
+            <TableColumn fx:id="distanceColumn" prefWidth="75.0" text="Distanza" />
+            <TableColumn fx:id="timeColumn" prefWidth="75.0" text="Durata" />
+            <TableColumn fx:id="speedColumn" prefWidth="75.0" text="Velocità" />
+            <TableColumn prefWidth="75.0" text="Qualità">
+               <columns>
+                  <TableColumn fx:id="qualitySpeedColumn" prefWidth="75.0" text="Rapidità" />
+                  <TableColumn fx:id="qualityCoachColumn" prefWidth="75.0" text="Carrozza" />
+                  <TableColumn fx:id="qualityColumn" prefWidth="75.0" text="Totale" />
+               </columns>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="Costo">
+               <columns>
+                  <TableColumn fx:id="fareColumn" prefWidth="75.0" text="Totale" />
+                  <TableColumn fx:id="farekmColumn" prefWidth="75.0" text="al Km" />
+                  <TableColumn fx:id="fareminuteColumn" prefWidth="75.0" text="al minuto" />
+               </columns>
+            </TableColumn>
+            <TableColumn fx:id="qualitypriceColumn" text="Convenienza" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>
